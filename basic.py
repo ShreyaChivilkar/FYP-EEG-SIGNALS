@@ -3,11 +3,12 @@ import numpy as np
 
 # read an edf file
 signals, signal_headers, header = prd.highlevel.read_edf('Subject00_1.edf')
-#print(signal_headers[0]['sample_rate'])
-#print(signals.size)
-print(header)
+
+print("Information about one subject:" , header)
 sh = np.array(signal_headers)
-print(sh.size)
 sig = np.array(signal_headers)
-print(sig.size)
-#print(signals)
+print("No of electrodes: ", sig.size)                              
+#print("DATA", signals)    
+print("Information about one electrode: ", sig[0])                          
+print("Size of data in each electrode: ", signals[0].size)
+print("Data in first electrode: ", signals[0])                       
